@@ -10,6 +10,7 @@ long volante_centro = 0;
 void setup() {
   Serial.begin(9600);
   volante_centro = volante.read();
+//definindo o centro do volante (alinhar o volante com o centro antes de ligar o arduino)
 }
 
 void loop() {
