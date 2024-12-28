@@ -1,0 +1,26 @@
+#include <Encoder.h>
+
+Encoder volante(2, 3); 
+const int acelerador = A2; 
+const int freio = A1;     
+const int embreagem = A0; 
+
+long volante_centro = 0; 
+
+void setup() {
+  Serial.begin(9600);
+  volante_centro = volante.read();
+}
+
+void loop() {
+  long volante_p = volante.read() - volante_centro; 
+  int acelerador_p = (analogRead(acelerador)-1023)*-1;  
+  int freio_p = (analogRead(freio)-1023)*-1;         
+  int embreagem_p = (analogRead(embreagem)-1023)*-1;   
+
+  Serial.print("V:"); Serial.print(volante_p);
+  Serial.print(" A:"); Serial.print(acelerador_p);  
+  Serial.print(" F:"); Serial.print(freio_p);     
+  Serial.print(" E:"); Serial.println(embreagem_p); 
+  delay(10); 
+}
