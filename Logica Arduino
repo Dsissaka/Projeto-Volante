@@ -1,6 +1,6 @@
 #include <Encoder.h>
 #include <Joystick.h>
-// a blblioteca joystick utilizada não é a padrão do Arduino e sim a personalizada de MHeironimus
+// a blblioteca joystick utilizada é a personalizada de MHeironimus
 
 Encoder volante(2, 3); 
 const int acelerador = A2; 
