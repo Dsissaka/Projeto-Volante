@@ -22,10 +22,9 @@ void setup() {
 
 void loop() {
   long volante_p = volante.read() - volante_centro; 
-  int acelerador_p = map(analogRead(acelerador), 0, 1023, 0, 100);  
-  int freio_p = map(analogRead(freio), 0, 1023, 0, 100);         
-  int embreagem_p = map(analogRead(embreagem), 0,1023, 0, 100);   
-// funcao map converte a leitura do potenciometro da escala 0 a 1023 para 0 a 100
+  int acelerador_p = analogRead(acelerador);  
+  int freio_p = analogRead(freio);         
+  int embreagem_p = analogRead(embreagem);   
 
 
   Joystick.setXAxis(volante_p);
